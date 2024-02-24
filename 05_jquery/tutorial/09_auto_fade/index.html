@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery-auto fade</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script src="./app.js"></script> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Auto Fade</h1>
+      <ul class="slide">
+        <li><img src="../images/img_01.jpg" alt="" /></li>
+        <li><img src="../images/img_02.jpg" alt="" /></li>
+        <li><img src="../images/img_03.jpg" alt="" /></li>
+        <li><img src="../images/img_04.jpg" alt="" /></li>
+      </ul>
+    </div>
+
+    <script>
+      var index = 0
+      $('.slide li').eq(index).show()
+
+      function autoFade() {
+        timer = setInterval(function () {
+          var nextIndex = (index + 1) % 4
+          $('.slide li').eq(index).fadeOut() // 0 , 1 , 2, 3
+          $('.slide li').eq(nextIndex).fadeIn() // 1, 2 , 3, 0
+          index = nextIndex
+        }, 1000)
+      }
+
+      $('.slide').hover(
+        function () {
+          clearInterval(timer)
+        },
+        function () {
+          autoFade()
+        }
+      )
+
+      autoFade()
+    </script>
+  </body>
+</html>

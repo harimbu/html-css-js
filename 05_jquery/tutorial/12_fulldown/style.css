@@ -1,0 +1,148 @@
+.container {
+  min-width: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+}
+
+.header.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.header button {
+  margin-top: 25px;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 30px;
+  background-color: #fff;
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.gnb {
+  display: flex;
+  height: 80px;
+  overflow: hidden;
+}
+
+.gnb > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gnb > li > a {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 70px;
+  font-weight: bold;
+}
+
+.gnb > li:hover > a {
+  color: orangered;
+}
+
+.gnb ul {
+  background-color: #fff;
+  font-size: 14px;
+  border-left: 1px solid #ddd;
+  padding: 10px 0;
+  height: 100%;
+}
+
+.gnb li:last-child ul {
+  border-right: 1px solid #ddd;
+}
+
+.gnb ul li a {
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.gnb ul li a:hover {
+  text-decoration: underline;
+}
+
+.gnb ul li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.main {
+  margin-top: 80px;
+}
+
+.slide {
+  height: 600px;
+  background-image: url('../images/slide_01.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+section img {
+  width: 100%;
+  display: block;
+}
+
+section p {
+  margin: 40px 0;
+  line-height: 1.6;
+}
+
+section .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.dimm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.dimm.active {
+  opacity: 1;
+}

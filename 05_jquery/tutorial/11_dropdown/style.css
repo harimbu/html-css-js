@@ -1,0 +1,167 @@
+.container {
+  min-width: 100%;
+}
+
+header {
+  padding: 0 12px;
+}
+
+nav {
+  max-width: 1200px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.bars {
+  font-size: 30px;
+  display: none;
+}
+
+.gnb > li {
+  position: relative;
+  display: inline-block;
+}
+
+.gnb > li > a {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 30px;
+  font-weight: bold;
+}
+
+.gnb ul {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  background-color: #fff;
+  display: none;
+  font-size: 14px;
+}
+
+.gnb ul li a {
+  display: block;
+  padding: 12px 30px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.gnb ul li a:hover {
+  background-color: #eee;
+}
+
+.gnb ul li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.slide {
+  height: 600px;
+  background-image: url('../images/slide_01.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+section img {
+  width: 100%;
+  display: block;
+}
+
+section p {
+  margin: 40px 0;
+  line-height: 1.6;
+}
+
+section .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 767.98px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+  .slide {
+    height: 60vh;
+  }
+
+  .bars {
+    display: block;
+    z-index: 1;
+  }
+
+  .gnb {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 80px 0;
+    overflow-y: scroll;
+    transition: left 0.3s;
+  }
+
+  .gnb.active {
+    left: 0;
+  }
+
+  .gnb > li {
+    display: block;
+  }
+
+  .gnb > li > a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+  }
+
+  .gnb ul {
+    position: initial;
+    transform: initial;
+    background-color: initial;
+    display: none;
+  }
+
+  .gnb ul li a {
+    display: block;
+    padding: 12px 30px;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+
+  .gnb ul li a:hover {
+    background-color: #ddd;
+  }
+
+  .gnb ul li:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}

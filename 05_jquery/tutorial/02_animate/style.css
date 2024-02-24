@@ -1,0 +1,29 @@
+.content {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.box1 {
+  background: orangered;
+}
+.box2 {
+  background: blue;
+}
+.box3 {
+  background: green;
+}
+.box4 {
+  background: gray;
+}
+
+.btns {
+  margin-top: 20px;
+}

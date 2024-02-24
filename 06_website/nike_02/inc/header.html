@@ -1,0 +1,83 @@
+<div class="bars"><img src="../images/icon_bars.svg" alt=""></div>
+<div class="nav">
+  <ul class="gnb">
+    <li>
+      <a href="#">Women</a>
+      <ul>
+        <li><a href="#">라이프 스타일</a></li>
+        <li><a href="#">러닝</a></li>
+        <li><a href="#">축구</a></li>
+        <li><a href="#">드라이 핏</a></li>
+        <li><a href="#">트레이닝</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Men</a>
+      <ul>
+        <li><a href="#">트레일 러닝</a></li>
+        <li><a href="#">요가</a></li>
+        <li><a href="#">수영복</a></li>
+        <li><a href="#">골프</a></li>
+        <li><a href="#">스케이팅보드</a></li>
+        <li><a href="#">샌들 & 슬리퍼</a></li>
+        <li><a href="#">솔로 스우시</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Kids</a>
+      <ul>
+        <li><a href="#">코드 버로우</a></li>
+        <li><a href="#">코르테즈</a></li>
+        <li><a href="#">리틀키즈</a></li>
+        <li><a href="#">주니어</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Accessories</a>
+      <ul>
+        <li><a href="#">아우터 콜렉션</a></li>
+        <li><a href="#">페가수스</a></li>
+        <li><a href="#">ACG 신제품</a></li>
+        <li><a href="#">신발</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Sale</a>
+      <ul>
+        <li><a href="#">10만원 이하</a></li>
+        <li><a href="#">에아 조단</a></li>
+        <li><a href="#">에어 맥스</a></li>
+        <li><a href="#">의류</a></li>
+        <li><a href="#">슬리퍼</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="logo"><img src="../images/logo.svg" alt="logo"></div>
+<div class="btns">
+  <a href="#"><i class="xi-search"></i></a>
+  <a href="#"><i class="xi-cart-o"></i></a>
+</div>
+
+<script>
+  var gnb = $('.gnb')
+  gnb.find('li').hover(
+    function() {
+      $(this).addClass('active').find('ul').slideDown('fast')
+    },
+    function() {
+      $(this).removeClass('active').find('ul').slideUp('fast')
+    },
+  )
+
+  var bars = $('.bars')
+  var header = $('.header')
+  bars.on('click', function() {
+    header.toggleClass('active')
+    if(header.hasClass('active')) {
+      $(this).find('img').attr('src', '../images/icon_close.svg')  
+    } else {
+      $(this).find('img').attr('src', '../images/icon_bars.svg')  
+    }
+  })
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <p class="btns">
+      <button class="minus">-</button>
+      <button class="defalut">100%</button>
+      <button class="plus">+</button>
+    </p>
+
+    <p class="font_size">font size : <span>14</span>px</p>
+
+    <p class="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus vero
+      dignissimos inventore dolorem maxime porro harum. Pariatur sed commodi
+      veritatis a excepturi doloribus. Nesciunt corporis debitis provident qui
+      fugit dolorem!
+    </p>
+
+    <script>
+      // 최대 20, 최소 8
+      let fontSize = 14
+      $('.btns button').on('click fousin', function () {
+        if ($(this).hasClass('plus')) {
+          if (fontSize >= 20) return
+          fontSize++
+        } else if ($(this).hasClass('minus')) {
+          if (fontSize <= 8) return
+          fontSize--
+        } else {
+          fontSize = 14
+        }
+
+        $('.font_size span').text(fontSize)
+        $('body').css('fontSize', fontSize)
+      })
+    </script>
+  </body>
+</html>

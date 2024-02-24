@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; } 
+
+ul { list-style: none; } 
+
+.item { text-align: center; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; } 
+
+.item01 { background-color: #badc58;} 
+.item02 { background-color: #ffbe76;} 
+.item03 { background-color: #f6e58d;} 
+.color04 { background-color: #c7ecee;} 
+.color05 { background-color: #7ed6df;} 
+.color06 { background-color: #f3a683;} 
+.color07 { background-color: #d1f8a5;} 
+.color08 { background-color: #82ccdd;} 
+.color09 { background-color: #38ada9;} 
+.color10 { background-color: #ff9ff3;} 
+.color11 { background-color: #cbb6f7;} 
+
+.container { 
+  display: flex;
+  gap: 20px;
+  flex-direction: row-reverse;
+} 
+
+.item01 {
+  margin-left: auto;
+}

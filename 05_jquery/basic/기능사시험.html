@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기능사 시험</title>
+  <script src="./script/jquery-1.12.4.js"></script>
+  <link rel="stylesheet" href="./style.css">  
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>LOGO</h1>
+      <ul class="gnb">
+        <li>
+          <a href="#">과일</a>
+          <ul>
+            <li><a href="#">사과</a></li>            
+            <li><a href="#">수박</a></li>            
+            <li><a href="#">봉숭아</a></li>            
+          </ul>
+        </li>
+        <li>
+          <a href="#">주류</a>
+          <ul>
+            <li><a href="#">소주</a></li>
+            <li><a href="#">맥주</a></li>
+            <li><a href="#">막걸리</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="slider">
+      <div class="slides">
+        <div class="slide slide1">1</div>
+        <div class="slide slide2">2</div>
+        <div class="slide slide3">3</div>      
+      </div>
+    </div>
+
+    <div class="contents">
+      <div class="tab">
+        <div class="titles">
+          <h2 class="active">공지사항</h2>
+          <h2>갤러리</h2>
+          <h2>배너</h2>
+          <h2>링크</h2>
+        </div>      
+        <div class="items">
+          <div class="item">공지사항... Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quae atque pariatur maxime repellat facilis natus corporis optio cupiditate odio porro hic distinctio odit, ab, inventore tenetur aliquid blanditiis harum.</div>
+          <div class="item">갤러러... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis nulla quisquam, quidem aliquam corporis nemo hic voluptates quasi sint reprehenderit libero debitis voluptatibus eaque laboriosam consequatur. Nisi, minus quam?</div>
+          <div class="item">배너... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis nulla quisquam, quidem aliquam corporis nemo hic voluptates quasi sint reprehenderit libero debitis voluptatibus eaque laboriosam consequatur. Nisi, minus quam?</div>
+          <div class="item">링크... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis nulla quisquam, quidem aliquam corporis nemo hic voluptates quasi sint reprehenderit libero debitis voluptatibus eaque laboriosam consequatur. Nisi, minus quam?</div>
+        </div>  
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>footer</p>
+    </div>
+  </div>
+
+  <script>
+    // 메뉴
+    $('.gnb').hover(
+      function() {
+        $(this).find('ul').slideDown('fast')       
+      },
+      function() {
+        $(this).find('ul').slideUp('fast')       
+      },
+    )
+
+    // 슬라이드 - 수평
+    // setInterval(function(){
+    //   $('.slides').animate({left: '-100%'}, function(){
+    //     $('.slide').first().appendTo($(this))
+    //     $(this).css('left', 0)
+    //   })
+    // }, 3000)
+    
+    // 슬라이드 - 수직
+    // setInterval(function(){
+    //   $('.slides').animate({top: '-100%'}, function(){
+    //     $('.slide').first().appendTo($(this))
+    //     $(this).css('top', 0)
+    //   })
+    // }, 3000)
+
+    // 페이드
+    var currentIdx = 0    
+    $('.slide').eq(currentIdx).show()
+    
+    setInterval(function(){
+      var nextIdx = ( currentIdx + 1) % $('.slide').length
+      $('.slide').eq(currentIdx).fadeOut()
+      $('.slide').eq(nextIdx).fadeIn()
+      currentIdx = nextIdx
+    }, 3000)
+
+
+    // 탭
+    $('.item').eq(0).show()
+    $('.titles h2').click(function(){
+      $('.titles h2').removeClass('active')
+      $(this).addClass('active')
+      $('.item').hide()
+      $('.item').eq($(this).index()).show()
+    })
+  </script>
+</body>
+</html>

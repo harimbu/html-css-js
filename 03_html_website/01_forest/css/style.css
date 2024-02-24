@@ -1,0 +1,130 @@
+:root {
+  --basic: #f7f1e3;
+  --accent: #fc427b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--basic);
+}
+
+body {
+  font-family: "NanumSquare", sans-serif !important;
+  color: var(--basic);
+  background: #1c191a;
+}
+
+.wrapper {
+  height: 100vh;
+  background: linear-gradient(
+      180deg,
+      rgba(23, 17, 16, 0.8) 11.5%,
+      rgba(25, 27, 58, 0.6) 87.65%
+    ),
+    url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  width: 1160px;
+  height: 112px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 140px;
+}
+
+.header .gnb li {
+  display: inline-block;
+}
+
+.header .gnb li a {
+  display: block;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+
+.header .gnb li a:hover {
+  color: var(--accent);
+}
+
+.header h1 {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header .login_btn {
+  display: inline-block;
+  width: 100px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 12px;
+  border-radius: 16px;
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.header .login_btn:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+/* 메인 */
+.main {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.main .info .top_title {
+  margin-top: 40px;
+  margin-bottom: 36px;
+  font-size: 18px;
+}
+
+.main .info .title {
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+
+.main .info .line {
+  width: 200px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 50px;
+}
+
+.main .info .txt {
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.main .info {
+  width: 560px;
+}
+
+.main .photo {
+  width: 560px;
+  height: 400px;
+  background: url(../images/sample_img.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  padding: 30px 0;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+ul li {
+  width: 254px;
+  margin-bottom: 30px;
+}
+
+li a {
+  color: #111;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style2.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>jquery | Tab-2</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1>Tab 2</h1>
+
+        <div id="tab">
+          <ul class="tab">
+            <li><a href="#tab1">tab1</a></li>
+            <li><a href="#tab2">tab2</a></li>
+            <li><a href="#tab3">tab3</a></li>
+          </ul>
+          <div id="tab1" class="tab_content">
+            겨울이 부끄러운 까닭이요, 자랑처럼 별이 까닭입니다. 별들을 이웃
+            이네들은 우는 계십니다. 어머님, 벌써 이름과 무성할 듯합니다.
+            무엇인지 노새, 이네들은 소녀들의 다 하나에 했던 덮어 버리었습니다.
+            쓸쓸함과 이름을 흙으로 딴은 하나에 하나에 까닭입니다. 내 가을
+            자랑처럼 가을로 이름을 헤일 않은 같이 까닭입니다. 하나의 다하지 가득
+            하나에 까닭입니다. 이름과, 소녀들의 옥 봅니다. 이네들은 딴은 이제
+            했던 있습니다. 하나에 많은 둘 멀듯이, 한 별 하나에 없이 무엇인지
+            계십니다. 이름과, 위에도 많은 하나의 때 가득 까닭입니다.
+          </div>
+          <div id="tab2" class="tab_content">
+            내린 이런 피어나듯이 헤일 쉬이 사람들의 아름다운 다하지 있습니다.
+            아스라히 노새, 가을 밤이 헤는 어머님, 별 나는 거외다. 사람들의 패,
+            너무나 멀듯이, 듯합니다. 릴케 시인의 둘 마디씩 있습니다. 덮어 아무
+            북간도에 이제 내 버리었습니다. 이름과, 가슴속에 라이너 가을로
+            버리었습니다. 계절이 노새, 어머니, 차 당신은 듯합니다. 나의 오면
+            헤는 밤이 다 별 풀이 봅니다. 별 불러 덮어 흙으로 지나가는 아름다운
+            이 잔디가 내일 있습니다.
+          </div>
+          <div id="tab3" class="tab_content">
+            무덤 오면 보고, 하나 어머니 있습니다. 아침이 마디씩 아스라히 비둘기,
+            피어나듯이 속의 새워 까닭입니다. 내 불러 걱정도 버리었습니다. 남은
+            이름자 이름자를 버리었습니다. 내 이름자 청춘이 있습니다. 까닭이요,
+            지나고 하나에 나의 어머님, 봅니다. 다 내 이런 멀리 별 가난한 것은
+            까닭입니다. 아침이 별 노새, 남은 벌레는 사람들의 동경과 우는 거외다.
+            별에도 없이 이제 그리워 딴은 별들을 옥 위에도 계십니다. 딴은 어머님,
+            밤이 가슴속에 패, 같이 있습니다. 별 어머님, 쓸쓸함과 별을 아스라히
+            둘 잠, 걱정도 까닭입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // 탭 1
+      var btns = $('.tab li')
+      var content = $('.tab_content')
+
+      btns.eq(0).addClass('active')
+      content.hide().eq(0).show()
+
+      btns.click(function () {
+        btns.removeClass('active')
+        $(this).addClass('active')
+
+        content.hide()
+
+        var activeTab = $(this).find('a').attr('href')
+        $(activeTab).show()
+      })
+
+      // // 탭 2
+      // $('#tab').tabs({
+      //   show: { effect: 'slide', duration: 400 },
+      // })
+
+      // var btns = $('.tab li')
+      // btns.eq(0).addClass('active')
+      // btns.click(function () {
+      //   btns.removeClass('active')
+      //   $(this).addClass('active')
+      // })
+    </script>
+  </body>
+</html>

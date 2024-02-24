@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slick slide</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slide_01_wrap">
+        <div class="message">
+          <p class="active">산</p>
+          <p>다이빙</p>
+          <p>구름</p>
+          <p>하늘</p>
+        </div>
+        <div class="slide_01">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../images/img_01_b.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_02_b.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_03_b.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_04_b.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="slide_01_thumb">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../images/img_01.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_02.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_03.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/img_04.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide_02_wrap">
+        <div class="slide_02">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-zoom-container">
+                <img src="../images/img_01.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-zoom-container">
+                <img src="../images/img_02.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-zoom-container">
+                <img src="../images/img_03.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-zoom-container">
+                <img src="../images/img_04.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const slide_01 = new Swiper('.slide_01')
+      const slide_01_thumb = new Swiper('.slide_01_thumb', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        zoom: true,
+      })
+      slide_01.controller.control = slide_01_thumb
+      slide_01_thumb.controller.control = slide_01
+
+      var msg = $('.message p')
+
+      slide_01.on('slideChange', function (swiper) {
+        msg.removeClass('active').eq(this.activeIndex).addClass('active')
+      })
+
+      const slide_02 = new Swiper('.slide_02', {
+        zoom: true,
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 150,
+        centeredSlides: true,
+      })
+    </script>
+  </body>
+</html>

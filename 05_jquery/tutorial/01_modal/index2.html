@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery | Modal</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./style2.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>모달창 만들기</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
+          quod non optio neque tempore omnis quo temporibus reiciendis, placeat
+          iusto modi et pariatur obcaecati voluptatem eaque quasi accusamus,
+          minima minus!
+        </p>
+
+        <a href="#x" class="more_btn">read more...</a>
+      </div>
+    </div>
+
+    <div class="dimm"></div>
+    <div class="modal">
+      <h2>안녕하세요</h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque officia
+        soluta quo, qui id omnis impedit rerum doloremque, iure eligendi
+        accusamus vel asperiores optio magni voluptatum veniam reprehenderit
+        earum tempora?
+      </p>
+      <button class="close_btn">close</button>
+    </div>
+
+    <script>
+      var moreBtn = $('.more_btn')
+      var closeBtn = $('.close_btn')
+      var dimm = $('.dimm')
+      var modal = $('.modal')
+
+      moreBtn.click(() => {
+        dimm.addClass('on')
+        modal.addClass('on')
+      })
+
+      closeBtn.click(function () {
+        dimm.removeClass('on')
+        modal.removeClass('on')
+      })
+
+      dimm.click(function () {
+        dimm.removeClass('on')
+        modal.removeClass('on')
+      })
+    </script>
+  </body>
+</html>

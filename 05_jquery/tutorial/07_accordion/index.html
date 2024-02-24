@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>jQuery | accordion</title>
+  </head>
+  <body>
+    <h1>Accordion</h1>
+    <div class="accordion">
+      <div class="text_box">
+        <h3>This is Title 1</h3>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus sed
+          laudantium expedita asperiores repellat culpa ducimus velit, esse
+          nulla, unde nisi fugit hic in aspernatur voluptatum aut obcaecati quas
+          accusamus. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Possimus sed laudantium expedita asperiores repellat culpa ducimus
+          velit, esse nulla, unde nisi fugit hic in aspernatur voluptatum aut
+          obcaecati quas accusamus.
+        </p>
+      </div>
+
+      <div class="text_box">
+        <h3>This is Title 2</h3>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In, corrupti
+          officiis laudantium inventore, unde nostrum alias dolor quaerat
+          similique nemo necessitatibus accusamus temporibus ipsum fugit iusto
+          reprehenderit animi. Itaque deleniti recusandae assumenda eum
+          temporibus architecto quibusdam, dignissimos ratione tempora expedita
+          porro reprehenderit, aut accusantium eaque et asperiores blanditiis
+          placeat? Sunt ratione sit voluptatem consectetur suscipit dicta rerum.
+          Ipsum sit ex mollitia voluptate necessitatibus, illo tempora animi!
+          Neque veniam ducimus, quibusdam quis ex quam aut doloremque cum rerum
+          labore at, ad eius officia molestias blanditiis maxime dolorem vel
+          quasi, unde assumenda harum. Quibusdam deserunt reprehenderit dolor
+          repellat voluptates rerum, quaerat perferendis.
+        </p>
+      </div>
+
+      <div class="text_box">
+        <h3>This is Title 3</h3>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus sed
+          laudantium expedita asperiores repellat culpa ducimus velit, esse
+          nulla, unde nisi fugit hic in aspernatur voluptatum aut obcaecati quas
+          accusamus.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // // 아코디언 1
+      $('.text_box:first').find('h3').addClass('active')
+      $('.text_box:first').find('p').slideDown()
+
+      // $('.text_box h3').on('click', function () {
+      //   $(this).toggleClass('active').next().slideToggle()
+      // })
+
+      // 아코디언 2
+      $('.text_box h3').on('click', function () {
+        if ($(this).hasClass('active')) {
+          $('.text_box').find('p').slideUp()
+          $(this).removeClass('active').next().slideUp()
+        } else {
+          $('.text_box h3').removeClass('active')
+          $('.text_box').find('p').slideUp()
+          $(this).addClass('active').next().slideDown()
+        }
+      })
+    </script>
+  </body>
+</html>

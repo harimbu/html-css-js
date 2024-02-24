@@ -1,0 +1,277 @@
+:root {
+  --basic-gray: #333;
+  --light-gray: #aaa;
+  --font-l: 20px;
+  --font-m: 16px;
+  --font-s: 12px;
+  --accent: #0275fc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: var(--font-m);
+}
+
+.header {
+}
+
+/* 헤더 메뉴 */
+.head__menu {
+  background: #f6f6f6;
+  border-top: 1px solid #dadce0;
+}
+
+.head__menu .contents {
+  width: 1100px;
+  height: 38px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head__menu .contents > a h1 {
+  text-indent: -9999px;
+  width: 42px;
+  height: 17px;
+  background: url(../images/daum.png);
+  background-position: 0 0;
+}
+
+.gnb {
+  display: flex;
+}
+
+.gnb a {
+  margin-left: 26px;
+  display: inline-block;
+}
+
+.gnb .login {
+  width: 52px;
+  height: 24px;
+  font-size: var(--font-s);
+  border: 1px solid #e4e4e4;
+  background: #f6f6f6;
+  color: #666;
+  text-align: center;
+  line-height: 20px;
+}
+
+.gnb .email,
+.gnb .app {
+  width: 24px;
+  height: 24px;
+  background: red;
+  text-indent: -9999px;
+  background: url(../images/daum.png);
+}
+
+.gnb .email {
+  background-position: 0 -20px;
+}
+
+.gnb .email:hover {
+  background-position: -60px -20px;
+}
+
+.gnb .app {
+  background-position: -30px -20px;
+}
+
+.gnb .app:hover {
+  background-position: -90px -20px;
+}
+
+/* 헤더 검색영역 */
+.head__search {
+}
+
+.head__search .contents {
+  width: 1100px;
+  height: 97px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  font-size: 26px;
+  margin-right: var(--font-l);
+  color: var(--basic-gray);
+  font-weight: 500;
+}
+
+.menu a.on {
+  font-weight: 700;
+}
+
+/* 검색창 */
+.search_form {
+  position: relative;
+}
+
+.search_form input[type="text"] {
+  width: 220px;
+  height: 36px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  padding: 0 40px 0 12px;
+  outline: none;
+}
+
+.search_form input[type="text"]:focus {
+  border: 1px solid var(--accent);
+}
+
+.search_form input[type="text"]:focus::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: transparent;
+}
+
+.search_form span {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  background: red;
+  text-indent: -9999px;
+  background: url(../images/btn_search.gif);
+  background-size: 100%;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  cursor: pointer;
+}
+
+/* 헤더 LNB */
+.head__lnb {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.head__lnb .contents {
+  width: 1100px;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lnb {
+  display: flex;
+}
+
+.lnb a {
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  font-weight: 500;
+  padding: 0 12px;
+  color: #333;
+  border-bottom: 2px solid transparent;
+}
+
+.lnb a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.lnb a.on {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.right_item a {
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  font-weight: 500;
+  padding-left: 12px;
+  color: #333;
+}
+
+/* 뉴스 리스트 4단 */
+.news_list {
+  width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news_list li {
+  width: 230px;
+}
+
+.news_list a {
+  color: #333;
+}
+
+.news_list a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.news_list .press {
+  color: #999;
+  font-size: 12px;
+}
+
+.item_card h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 130%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.item_card .item_list h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.item_card .photo {
+  width: 230px;
+  height: 156px;
+  background-color: #03660f;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.item_card .photo:hover img {
+  opacity: 0.6;
+}
+
+.item_list {
+  margin-top: 20px;
+}
+
+.item_list li {
+  margin: 12px 0;
+}
+
+@media screen and (max-width: 1180px) {
+  .head__menu .contents,
+  .head__search .contents,
+  .head__lnb .contents,
+  .news_list {
+    width: 980px;
+  }
+}

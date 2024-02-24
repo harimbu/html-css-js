@@ -1,0 +1,88 @@
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.btns {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: #666;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.main p {
+  margin-top: 30px;
+}
+
+.gallery,
+.single {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.gallery a {
+  display: block;
+  height: 200px;
+}
+
+.gallery a:nth-child(1) {
+  background: url('../images/imag_01.jpg') no-repeat center / cover;
+}
+
+.gallery a:nth-child(2) {
+  background: url('../images/imag_02.jpg') no-repeat center / cover;
+}
+
+.gallery a:nth-child(3) {
+  background: url('../images/imag_03.jpg') no-repeat center / cover;
+}
+
+.gallery a:nth-child(4) {
+  background: url('../images/imag_04.jpg') no-repeat center / cover;
+}
+
+.gallery a:nth-child(5) {
+  background: url('../images/imag_05.jpg') no-repeat center / cover;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.modal p {
+  margin: 20px 0;
+}
+
+.box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}

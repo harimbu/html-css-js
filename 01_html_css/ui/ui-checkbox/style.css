@@ -1,0 +1,52 @@
+.img_check div {
+  padding: 10px 0;
+}
+
+.img_check input[type='checkbox'] {
+  display: none;
+}
+
+.img_check input[type='checkbox'] + label {
+  display: inline-block;
+  height: 20px;
+  background: url('./check_img.png') no-repeat 0 0;
+  background-size: 20px 40px;
+  padding-left: 30px;
+}
+
+.img_check input[type='checkbox']:checked + label {
+  background-position: 0 -20px;
+}
+
+.toggle_check input[type='checkbox'] {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px #bebebe;
+}
+
+.toggle_check input[type='checkbox']:checked {
+  background: #20bf6b;
+}
+
+.toggle_check input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  background: #fff;
+  border-radius: 46px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s;
+}
+
+.toggle_check input[type='checkbox']:checked::before {
+  left: 40px;
+}

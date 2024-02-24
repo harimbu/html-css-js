@@ -1,0 +1,32 @@
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+button.active {
+  background-color: #000;
+}
+
+.list {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.list li {
+  height: 120px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list li span {
+  display: inline-block;
+  margin-left: 10px;
+}

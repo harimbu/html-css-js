@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jquery-each</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>each</h1>
+
+    <div class="card">
+      <div class="photo">
+        <img src="../images/img_01.jpg" alt="" />
+        <div class="sns">
+          <i class="xi-share"></i>
+          <i class="xi-instagram"></i>
+          <i class="xi-kakaostory"></i>
+          <i class="xi-youtube-play"></i>
+        </div>
+      </div>
+
+      <div class="info">
+        <h2>This is title</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
+          dolore fugiat quasi blanditiis, dignissimos magni, autem harum
+          sapiente ex quod fugit. Eveniet ea officia aspernatur iure sunt
+          velit quis dolores.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sns = $('.sns')
+    var item = $('.sns i')
+
+    $('.sns').hover(
+      function () {
+        item.each(function (index) {
+          console.log(index)
+          $(this)
+            .stop()
+            .animate({ left: index * 50 }, 300)
+        })
+      },
+      function () {
+        item.each(function () {
+          $(this).stop().animate({ left: 0 }, 300)
+        })
+      }
+    )
+  </script>
+</body>
+
+</html>

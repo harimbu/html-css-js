@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-size: 14px;
+  color: #333;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid blue;
+  z-index: 1;
+}
+
+.gnb {
+  display: flex;
+}
+
+.gnb > li > a {
+  display: block;
+  padding: 0 60px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.gnb > li > a:hover {
+  color: orangered;
+}
+
+.gnb > li {
+  position: relative;
+}
+
+.gnb ul {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  display: none;
+}
+
+.gnb ul a {
+  display: block;
+  padding: 16px ;
+}
+.gnb ul a:hover {
+  background-color: #999;
+  color: #fff;
+}
+
+.slider {
+  height: 300px;
+  background-color: #666;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  /* display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column; */
+  
+  /* 페이드 */
+  position: relative;
+}
+
+.slide {
+  width: 1200px;
+  height: 300px;
+  font-size: 200px;
+  color: #fff;
+  text-align: center;
+
+  /* 페이드 */
+  position: absolute;
+  display: none;
+}
+
+.slide.slide1 {background-color: lightpink; }
+.slide.slide2 {background-color: lightblue; }
+.slide.slide3 {background-color: lightgreen; }
+
+.contents {
+  height: 200px;
+  padding: 10px 0; 
+}
+
+.tab {
+  width: 380px;
+}
+
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #666;
+  gap: 4px;
+}
+
+.titles h2 {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.titles h2.active {
+  background-color: #666;
+  color: #fff;
+}
+
+.items {
+  height: 132px;
+}
+
+.items .item {
+  height: 132px;
+  padding: 16px;
+  display: none;
+}
+
+.footer {
+  height: 100px;
+  background-color: #dfdfdf;
+  text-align: center;
+  line-height: 100px;
+}

@@ -1,0 +1,23 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.list li {
+  height: 140px;
+  line-height: 140px;
+  background: #eee;
+  text-align: center;
+  display: none;
+}
+
+button {
+  margin: 2rem 0;
+}

@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* flex-container */
+/* - main axis */
+/* - cross axis */
+
+/* 부모 속성(container)
+flex-direction
+flex-wrap
+justify-content
+align-items
+align-content */
+
+/* flex-item */
+/* 자식 속성(item)
+flex
+flex-grow
+flex-shrink
+flex-basis
+order */
+
+/* flex:1
+flex-grow:1
+flex-shrink:1
+flex-basis:0 */
+
+/* margin */
+
+header {
+  height: 80px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+h1 {
+  padding-right: 1rem;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.extra {
+  margin-left: auto;
+}
+
+.extra a {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  background: #666;
+  color: #fff;
+}
+
+button {
+  padding: 6px;
+  margin: 0 4px;
+}
+
+.container {
+  max-width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  background: #eee;
+  font-size: 2rem;
+  display: flex;
+  margin-top: 2rem;
+  align-items: baseline;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  /* text-align: center; */
+  /* line-height: 100px; */
+}
+
+.box1 {
+  background: #fad390;
+  padding: 20px;
+}
+
+.box2 {
+  background: #f6b93b;
+  flex: 1;
+}
+
+.box3 {
+  background: #fa983a;
+}
+
+.box4 {
+  background: #e58e26;
+}
+
+.box5 {
+  background: #b8e994;
+}
+
+.box6 {
+  background: #78e08f;
+}
+
+.box7 {
+  background: #38ada9;
+}
+
+.box8 {
+  background: #079992;
+}
+
+.box9 {
+  background: #6a89cc;
+}
+
+.box10 {
+  background: #4a69bd;
+}

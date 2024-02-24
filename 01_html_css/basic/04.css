@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1200px;
+  margin: 50px auto;
+}
+
+.container h2 {
+  margin-bottom: 30px;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+
+.list li img {
+  width: 200px;
+}

@@ -1,0 +1,220 @@
+/* hero */
+.hero {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 648px;
+  background-image: url('../images/nike_01.png');
+  background-size: 68%;
+  background-repeat: no-repeat;
+  background-position: 400px -40px;
+  /* background-color: red; */
+}
+
+.hero .text_box {
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+}
+
+.hero .text_box h2 {
+  font-size: var(--title-01);
+  font-weight: 900;
+}
+
+.hero .text_box p {
+  font-weight: 500;
+  font-size: 24px;
+  margin: 20px 0 40px;
+}
+
+/* banners */
+.banners {
+  max-width: 1320px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.banners li {
+  background-color: #111;
+  color: #fff;
+  height: 642px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banners li h3 {
+  font-weight: 900;
+  font-size: var(--title-02);
+}
+
+.banners li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: var(--title-03);
+}
+
+.banners li a img {
+  width: 22px;
+}
+
+/* product */
+.product {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product h3 {
+  font-weight: 900;
+  font-size: var(--title-03);
+  margin-top: 130px;
+  margin-bottom: 30px;
+}
+
+.product ul {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; */
+}
+
+.product ul li {
+  width: 308px;
+  margin-right: 16px;
+}
+
+.product ul li .photo {
+  background-color: #e7e7e7;
+  height: 308px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product ul li .titles {
+  padding: 14px 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product ul li .titles h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* message */
+.message {
+  max-width: 1320px;
+  padding: 150px 20px 130px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message h3 {
+  font-weight: 900;
+  font-size: var(--title-02);
+}
+
+.message p {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 24px 0 60px;
+  width: 46%;
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  /* hero */
+  .hero {
+    background-size: 130%;
+    background-position: center 0;
+    transform: scaleX(-1);
+    padding-top: 380px;
+  }
+
+  .hero .text_box {
+    position: initial;
+    transform: scaleX(-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero .text_box h2 {
+    font-size: var(--title-02);
+    line-height: 1.2;
+  }
+
+  .hero .text_box p {
+    font-size: 16px;
+    margin: 13px 0 30px;
+  }
+
+  /* banners */
+  .banners {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .banners li {
+    height: 340px;
+    padding: 20px;
+  }
+
+  .banners li h3 {
+    font-size: var(--title-03);
+  }
+
+  .banners li a {
+    font-size: var(--title-04);
+  }
+
+  .banners li a img {
+    width: 18px;
+  }
+
+  /* product */
+  .product {
+    position: relative;
+    height: 400px;
+  }
+
+  .product ul {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 150%;
+  }
+
+  .product ul li .photo {
+    height: 300px;
+  }
+
+  /* message */
+  .message {
+    padding-bottom: 85px;
+  }
+
+  .message h3 {
+    font-size: 26px;
+  }
+
+  .message p {
+    font-size: 12px;
+    line-height: 1.4;
+    width: 70%;
+  }
+}

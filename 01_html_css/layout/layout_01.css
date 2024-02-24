@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.header {
+  height: 200px;
+  background-color: #4f4f4f;
+  line-height: 200px;
+}
+
+.contents {
+  height: 624px;
+  background-color: #bdbdbd;
+  line-height: 624px;
+}
+
+.footer {
+  height: 200px;
+  background-color: #4f4f4f;
+  line-height: 200px;
+}

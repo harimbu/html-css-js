@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nike</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header"></div>
+    <div class="hero">
+      <div class="photo">
+        <img src="../images/hero_image.png" alt="">
+      </div>
+      <div class="text_box">
+        <h1>너만을<br>위한 나이키</h1>
+        <p>ADV 기술을 적용한 2023 나이키 축구 국가대표팀 저지를 만나 보세요.</p>
+        <a href="#" class="btn">shop</a>
+      </div>
+    </div>
+    <div class="container"></div>
+    <div class="footer"></div>
+  </div>
+
+  <script>
+    ScrollReveal().reveal('.photo', {
+      easing: 'ease-in-out',
+      duration: 1000,
+      rotate: {z: 20},
+     scale: 2
+    })
+    ScrollReveal().reveal('.text_box h1', {
+      delay: 800,
+      origin: 'bottom',
+      distance: '30px'
+    })
+    ScrollReveal().reveal('.text_box p', {
+      delay: 900,
+      origin: 'top',
+      distance: '30px'
+    })
+    ScrollReveal().reveal('.text_box a', {
+      delay: 1000,
+      origin: 'left',
+      distance: '300px'
+    })
+  </script>
+</body>
+</html>

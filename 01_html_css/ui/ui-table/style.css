@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+}
+
+/* 테이블 01 */
+.tbl-01 td,
+.tbl-01 th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tbl-01 th {
+  background-color: #efefef;
+}
+
+/* 테이블 02 */
+.tbl-02 td,
+.tbl-02 th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tbl-02 tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+/* 테이블 03 */
+.tbl-03 td,
+.tbl-03 th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.tbl-03 th {
+  background-color: #efefef;
+}
+
+.tbl-03 tr:nth-child(1) th {
+  background-color: #666;
+  color: #fff;
+  padding: 20px;
+}
+
+/* 테이블 04 */
+.tbl-04 {
+  border-top: 1px solid #ccc;
+}
+.tbl-04 td,
+.tbl-04 th {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.tbl-04 th {
+  background-color: #efefef;
+}
+
+/* 테이블 05 */
+.tbl-05 td,
+.tbl-05 th {
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 10px;
+  text-align: center;
+}
+.tbl-05 th:last-child,
+.tbl-05 td:last-child {
+  border-right: none;
+}
+
+.tbl-05 th {
+  background-color: #efefef;
+}
+
+/* 테이블 06 */
+.tbl-06 td,
+.tbl-06 th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tbl-06 th {
+  background-color: #efefef;
+}
+
+/* 테이블 07 */
+.tbl-07 td,
+.tbl-07 th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tbl-07 th {
+  background-color: #efefef;
+}
+
+.tbl-07 td:nth-child(2) {
+  text-align: center;
+}
+
+/* 달력 */
+.cal {
+  width: 360px;
+  font-size: 12px;
+  color: #333;
+  border-top: 2px solid rgb(165, 165, 165);
+}
+.cal td,
+.cal th {
+  border: 1px solid #efefef;
+  padding: 12px;
+}
+.cal th {
+  background: #e7f5dd;
+  color: #111;
+}
+.cal td {
+  text-align: right;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cal td:hover {
+  background: #efefef;
+}
+
+.cal th:last-child,
+.cal td:last-child {
+  color: #1e90ff;
+}
+
+.cal th:first-child,
+.cal td:first-child {
+  color: #ff6348;
+}
+.red {
+  color: #ff6348;
+  font-weight: bold;
+}

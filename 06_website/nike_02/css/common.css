@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+  --primary: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  color: var(--primary);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header {
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.header.active {
+  color: #fff;
+}
+
+.gnb {
+  display: flex;
+  font-size: 14px;  
+  gap: 4px;
+}
+
+.gnb > li {
+  padding: 30px;
+  position: relative;
+}
+
+.gnb > li > a {
+  position: relative;
+}
+
+.gnb > li:hover > a::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.gnb ul {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  left: 0;
+  width: 120px;
+  margin-left: 6px;
+  border: 1px solid #ddd;
+  padding: 6px 20px;
+  display: none;
+}
+
+.gnb ul a {
+  white-space: nowrap;
+  display: block;
+  padding: 6px 0;
+  font-size: 12px;
+}
+.gnb ul a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  font-size: 24px;
+}
+
+.btns a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bars {
+  display: none;
+}
+
+.container {
+  max-width: 1212px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199.98px) {
+  .gnb > li {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .bars {
+    position: relative;
+    display: block;
+    z-index: 1;
+    margin-left: 16px;
+  } 
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 80px;    
+    transition: all 0.3s;
+  }
+
+  .gnb {
+    display: none;
+  }
+
+  .header.active {
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .header.active .logo img  {
+    filter: invert(100);
+  }
+
+  .header.active .nav {
+    background-color: rgba(0,0,0,0.95);
+    left: 0;
+  }
+
+  .header.active .gnb {
+    display: initial;
+  }
+
+  .gnb > li {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .gnb > li > a {
+    font-weight: bold;
+    display: block;
+    position: relative;
+  }
+
+  .gnb > li > a::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+  }
+  
+  .gnb > li.active > a::after {
+    content: '-';
+    position: absolute;
+    right: 0;
+  }
+  
+  .gnb > li:hover > a::before {
+    display: none;
+  }
+
+  .gnb ul {
+    position: initial;
+    top: 80px;
+    right: 0;
+    left: 0;
+    width: initial;
+    margin-left: 0;
+    margin-top: 16px;
+    border: none;
+    padding: 0;
+    display: none;
+  }
+
+  .btns {
+    position: relative;
+    z-index: 1;
+    margin-right: 16px;
+  }
+
+  .logo img {
+    width: 56px;
+  } 
+}

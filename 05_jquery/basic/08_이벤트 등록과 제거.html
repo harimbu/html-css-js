@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <h1>이벤트 등록 제거</h1>
+    <section>
+      <button class="btn1">버튼1</button>
+      <p>내용 1</p>
+      <button class="btn2">버튼2</button>
+      <p>내용 2</p>
+    </section>
+
+    <script>
+      // 단독 이벤트 등록
+      $('.btn1').click(function () {
+        $(this).next().text('hello')
+      })
+
+      // $('.btn2').on('mouseover focus', function(){
+      //   $(this).next().text('안녕하세요')
+      // })
+
+      $('.btn2').on({
+        'mouseover focus': function () {
+          $(this).next().text('어서오세요')
+        },
+        'mouseleave blur': function () {
+          $(this).next().text('안녕히 가세요')
+        },
+      })
+
+      // 강제 이벤트 발생
+      $('.btn1').click()
+      $('.btn2').trigger('mouseover')
+
+      // 이벤트 제거
+      $('.btn2').off('mouseleave')
+
+      // 로딩 이벤트
+      // load(), ready(), error()
+      // 마우스 이벤트
+      // click(), dbclick(), hover() mouseover(), mouseleave(), mouseenter(), mouseout(), mousedown(), mouseup(), mousemove(), scroll()
+      // 포커스 이벤트
+      // focus(), blur(), focusin(), focusout(), change()
+      // 키보드 이벤트
+      // keypress(), keydown(), keyup()
+    </script>
+  </body>
+</html>

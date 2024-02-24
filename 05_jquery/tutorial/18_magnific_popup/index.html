@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQquery | Magnific Popup</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./js/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" href="./css/magnific-popup.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Magnific Popup</h1>
+      <div class="main">
+        <div class="btns">
+          <a class="btn popup-modal" href="#test-modal">Open modal</a>
+          <a
+            class="btn popup-youtube"
+            href="https://www.youtube.com/watch?v=z4PKzz81m5c"
+            >Open YouTube video</a
+          >
+          <a
+            class="btn simple-ajax-popup"
+            href="http://127.0.0.1:5500/jQuery/18_magnific_popup/ajax.html"
+            >Load ajax</a
+          >
+        </div>
+
+        <p>Single image lightbox</p>
+        <div class="single">
+          <a
+            class="image-popup-vertical-fit"
+            href="../images/img_01_b.jpg"
+            title="안녕하세요"
+          >
+            <img src="../images/img_01.jpg" />
+          </a>
+          <a
+            class="image-popup-fit-width"
+            href="../images/img_02_b.jpg"
+            title="나는 제이쿼리입니다."
+          >
+            <img src="../images/img_02.jpg" />
+          </a>
+          <a class="image-popup-no-margins" href="../images/img_03_b.jpg">
+            <img src="../images/img_03.jpg" />
+          </a>
+        </div>
+
+        <p>Lightbox gallery</p>
+        <div class="gallery">
+          <a href="./images/imag_01.jpg" title="암벽도시"></a>
+          <a href="./images/imag_02.jpg" title="궁전"></a>
+          <a href="./images/imag_03.jpg" title="여자"></a>
+          <a href="./images/imag_04.jpg" title="해변"></a>
+          <a href="./images/imag_05.jpg" title="문"></a>
+        </div>
+      </div>
+
+      <div id="test-modal" class="modal mfp-hide white-popup-block">
+        <h2>Modal</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse,
+          ipsam autem nisi rem quidem necessitatibus assumenda consectetur
+          pariatur numquam sit voluptatem voluptatibus maxime tempora quam
+          doloribus fuga, nam quisquam?
+        </p>
+        <a class="btn popup-modal-dismiss" href="#">Dismiss</a>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        // modal popup
+        $('.popup-modal').magnificPopup({
+          type: 'inline',
+          preloader: false,
+          focus: '#username',
+          modal: true,
+        })
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+          e.preventDefault()
+          $.magnificPopup.close()
+        })
+
+        // youtube
+        $('.popup-youtube').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false,
+        })
+
+        // ajax popup
+        $('.simple-ajax-popup').magnificPopup({
+          type: 'ajax',
+          ajax: {
+            settings: null,
+            cursor: 'mfp-ajax-cur',
+            tError: '<a href="%url%">The content</a> could not be loaded.',
+          },
+        })
+
+        // Single image lightbox
+        $('.image-popup-vertical-fit').magnificPopup({
+          type: 'image',
+          closeOnContentClick: true,
+          mainClass: 'mfp-img-mobile',
+          image: {
+            verticalFit: true,
+          },
+        })
+
+        $('.image-popup-fit-width').magnificPopup({
+          type: 'image',
+          closeOnContentClick: true,
+          image: {
+            verticalFit: false,
+          },
+        })
+
+        $('.image-popup-no-margins').magnificPopup({
+          type: 'image',
+          closeOnContentClick: true,
+          closeBtnInside: false,
+          fixedContentPos: true,
+          mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+          image: {
+            verticalFit: true,
+          },
+          zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+          },
+        })
+
+        // gallery
+        $('.gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          tLoading: 'Loading image #%curr%...',
+          mainClass: 'mfp-img-mobile',
+          gallery: {
+            enabled: true,
+            preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
+          },
+          image: {
+            verticalFit: false,
+            tError:
+              '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function (item) {
+              return (
+                item.el.attr('title') + '<small>by Yarnserver@gmail.com</small>'
+              )
+            },
+          },
+        })
+      })
+    </script>
+  </body>
+</html>

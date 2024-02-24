@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 4rem 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+h2,
+h3 {
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  background-color: #666;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+/* section */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 12px;
+  position: relative;
+}
+
+section img {
+  width: 100%;
+  display: block;
+}
+
+section p {
+  margin: 40px 0;
+  line-height: 1.6;
+}
+
+section .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}

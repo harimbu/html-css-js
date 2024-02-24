@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax</title>
+    <script src="../script/jquery-1.12.4.js"></script>
+    <style>
+      .tbl td {
+        border: 1px solid #666;
+        padding: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title"></div>
+      <div class="list"></div>
+    </div>
+
+    <script>
+      $('.title').load('./title.html')
+      $.ajax({
+        url: './db/user.xml',
+        // dataType: 'xml',
+        success: function (data) {
+          $data = $(data).find('record')
+
+          if ($data.length > 0) {
+            var tbl = $('<table />')
+            tbl.addClass('tbl')
+
+            $.each($data, function (i, item) {
+              var id = $(item).find('id').text()
+              var firstName = $(item).find('first_name').text()
+              var lastName = $(item).find('last_name').text()
+              var email = $(item).find('email').text()
+              var gender = $(item).find('gender').text()
+
+              var row = $('<tr />').append(
+                $('<td />').text(id),
+                $('<td />').text(firstName),
+                $('<td />').text(lastName),
+                $('<td />').text(email),
+                $('<td />').text(gender)
+              )
+
+              tbl.append(row)
+            })
+
+            $('.list').append(tbl)
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+      .title {
+        background-color: red;
+      }
+      .box3 div {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>객체 편집 메서드</h1>
+    <div class="wrap">
+      <p>내용 1</p>
+      <p>내용 2</p>
+      <p>내용 3</p>
+    </div>
+
+    <ul class="list">
+      <li>리스트 1</li>
+    </ul>
+
+    <ul class="list2">
+      <li>list 1</li>
+    </ul>
+
+    <div class="box1">
+      <h2>제목 1</h2>
+      <div>내용 1</div>
+      <div>내용 2</div>
+    </div>
+
+    <div class="box2">
+      <h2>제목 2</h2>
+      <div>내용 3</div>
+      <div>내용 4</div>
+    </div>
+
+    <div class="box3">
+      <p class="title">안녕하세요 <span>jquery</span>입니다.</p>
+      <p class="p1">내용 1</p>
+      <p class="p2">내용 2</p>
+      <p class="p3">내용 3</p>
+      <p class="p3">내용 4</p>
+
+      <ul>
+        <li>내용 5</li>
+        <li>내용 6</li>
+      </ul>      
+    </div>
+
+    <script>
+      // before(), insertBefore(), after(), insertAfter()
+      $(".wrap p:eq(1)").before("<p>Before<p/>");
+      $("<p>Insert Before</p>").insertBefore(".wrap p:eq(0)");
+      $(".wrap p:eq(4)").after("<p>After<p/>");
+      $("<p>Insert After</p>").insertAfter(".wrap p:last");
+
+      // append(), appendTo(), prepend(), prependTo()
+      $(".list").append("<li>리스트 2</li>");
+      $("<li>리스트 3</li>").appendTo($(".list"));
+
+      // clone(), empty(), remove()
+      var cloneList = $(".list").children().clone();
+      $(".list2").append(cloneList);
+      $(".list2").empty();
+      $(".list").remove();
+
+      // replaceAll(), replaceWith() // 선택한 요소를 새 요소로 변경
+      $('h1').replaceWith("<h3>replaceWith</h3>")
+      $('<p>replace</p>').replaceAll('.box2 div')
+      
+      // unwrap() // wrap() // wrapAll() // wrapInner()
+      $('span').unwrap() // 부모요소를 삭제
+      $('.p1').wrap('<div />') // 선택한 요소를 div로 감싼다.
+      $('.p3').wrapAll('<div />') // 선택한 요소를 div로 감싼다.
+      $('.box3 ul li').wrapInner('<h3 />') // 선택요소의 하위요소를 h3로 감싼다.
+    </script>
+  </body>
+</html>

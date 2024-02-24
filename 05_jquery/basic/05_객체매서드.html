@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery-객체 관련 메서드</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <h1>객체 관련 메서드</h1>
+
+    <div id="box1">
+      <h2>Html</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+        nulla.
+      </p>
+    </div>
+
+    <div id="box2"></div>
+
+    <div id="box3">
+      <h2></h2>
+      <p></p>
+    </div>
+
+    <div id="box4">
+      <img src="./images/card_01.jpg" alt="card1" border="2" />
+    </div>
+
+    <form action="">
+      <label for="user_name">이름</label>
+      <input type="text" name="user_name" id="user_name" value="홍길동" />
+      <label for="user_id">아이디</label>
+      <input type="text" name="user_id" id="user_id" value="Alice" />
+    </form>
+
+    <form action="">
+      <p>
+        <input type="checkbox" name="chk_1" id="chk_1" />
+        <label for="chk_1">수박</label>
+        <input type="checkbox" name="chk_2" id="chk_2" checked />
+        <label for="chk_2">딸기</label>
+        <input type="checkbox" name="chk_3" id="chk_3" />
+        <label for="chk_3">복숭아</label>
+      </p>
+
+      <p>
+        <select name="books" id="books">
+          <option value="html">html</option>
+          <option value="css">css</option>
+          <option value="javascript" selected>javascript</option>
+        </select>
+      </p>
+    </form>
+
+    <script>
+      // html(), text()
+      var result = $('#box1').html() // 하위요소를 문자열로 반환
+      $('#box2').text(result)
+
+      $('#box1 p').html('<a href="#">안녕하세요</a>') // 하위요소를 제거하고 새 요소로 변경
+
+      $('#box3 h2').text($('#box1 h2').text()) // 요소의 텍스트를 가져오거나 생성
+      $('#box3 p').text($('#box1 p').text())
+
+      // attr(), removeAttr()
+      var srcValue = $('#box4 img').attr('src')
+      var altValue = $('#box4 img').attr('alt')
+      var boardValue = $('#box4 img').attr('border')
+      console.log(srcValue)
+      console.log(altValue)
+      console.log(boardValue)
+
+      $('#box4 img')
+        .attr({
+          src: './images/card_02.jpg',
+          width: 150,
+          alt: 'card2',
+        })
+        .removeAttr('border')
+
+      //var() 폼 요소의 속성값을 가져오거나 값을 적용
+      console.log($('#user_name').val())
+      console.log($('#user_id').val())
+
+      $('#user_name').val('임꺽정')
+      $('#user_id').val('Tom')
+
+      // prop() 폼 요소의 상태 속성값을 가져오거나 새롭게 설정
+      // 선택한 요소의 태그명, 노드타입, 선택된 옵션의 인덱스를 알수 있다.
+
+      console.log($('#chk_1').prop('checked'))
+      console.log($('#chk_2').prop('checked'))
+      $('#chk_3').prop('checked', true)
+      console.log($('#books').prop('selectedIndex'))
+    </script>
+  </body>
+</html>

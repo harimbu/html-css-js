@@ -1,0 +1,163 @@
+/* my octopus teacher */
+/* netflix png */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.header {
+  width: 96%;
+  margin: 0 auto;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  width: 180px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  margin-left: 60px;
+}
+
+.nav li a {
+  color: #ccc;
+}
+
+.nav li a:hover {
+  color: #fff;
+}
+
+.bar {
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.bar span {
+  width: 36px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition: background 0.4s;
+}
+
+.bar span::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: #fff;
+  transition: top 0.3s, transform 0.4s;
+}
+
+.bar span::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: #fff;
+  transition: top 0.3s, transform 0.4s;
+}
+
+/* bar motion */
+.bar.on span {
+  background: transparent;
+}
+
+.bar.on span::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.bar.on span::after {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 992px) {
+  .header {
+    width: 90%;
+    height: 80px;
+  }
+  .logo {
+    width: 80px;
+  }
+  .nav li {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 100%;
+    background: #111;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 6rem;
+    transition: left 0.4s;
+  }
+
+  .nav li {
+    margin-left: initial;
+  }
+
+  .nav a {
+    display: block;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav.on {
+    left: 0;
+  }
+
+  .bar {
+    display: flex;
+    top: 24px;
+    right: 20px;
+  }
+}
